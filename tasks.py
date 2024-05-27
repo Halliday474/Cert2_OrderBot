@@ -19,8 +19,7 @@ def order_robots_from_RobotSpareBin():
     Creates ZIP archive of the receipts and the images.
     """
     browser.configure(
-        slowmo=300,
-        
+        slowmo=0,
         )
     
     open_robot_order_website()
@@ -129,7 +128,7 @@ def embed_screenshot_to_receipt(screenshot, pdf_file):
 def archive_receipts():
     """Create a Zip folder of all receipts"""
     lib = Archive()
-    lib.archive_folder_with_zip('output', 'output/OrderReceipts.zip')
+    lib.archive_folder_with_zip('output', 'output/OrderReceipts.zip', include='*.pdf')
 
     
 
